@@ -18,10 +18,11 @@ export default function Interface() {
               lname,
               email,
               phone
-          }).then(res=> {
-              console.log(res);
+          }).then(()=> {
+              navigate('/post')
+          axios.get(api)
           })
-          navigate('/post')
+          
       }else{
           alert("Please write correct information")
       }
@@ -33,7 +34,7 @@ export default function Interface() {
       <input type="text" placeholder='الاسم' onChange={e=> setFName(e.target.value)}/>
       <input type="text" placeholder='العائله' onChange={e=> setLName(e.target.value)}/>
       <input type="email" placeholder='البريد الالكتروني' onChange={e=> setEmail(e.target.value)}/>
-      <input type="email" placeholder='رقم التواصل' onChange={e=> setPhone(e.target.value)}/>
+      <input type="number" placeholder='رقم التواصل' onChange={e=> setPhone(e.target.value)}/>
       <button onClick={postData}>تسجيل البيانات</button>
     </div>
   )
